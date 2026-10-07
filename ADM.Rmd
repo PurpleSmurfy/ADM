@@ -3,7 +3,7 @@ title: "R Notebook"
 output: github_document
 ---
 
-```{r}
-library(dada2); packageVersion("dada2")
-```
+# Vérification du bon nombre de données
+ls | wc -l
+
 
