@@ -7,11 +7,18 @@ output: github_document
 
 ls | wc -l
 
+```{r}
+# On sélectionne le chemin où se trouve nos données
+path <- "~/ADM/Data"
+
+# On vérifie notre liste de fichiers
+list.files(path)
+```
 
 ```{r}
 # Identifier les fichiers Forward et Reverse
-fnFs <- sort(list.files(path="Data", pattern="_1.fastq", full.names = TRUE))
-fnRs <- sort(list.files(path="Data", pattern="_2.fastq", full.names = TRUE))
+fnFs <- sort(list.files(path, pattern="_1.fastq", full.names = TRUE)) #Forward
+fnRs <- sort(list.files(path, pattern="_2.fastq", full.names = TRUE)) #Reverse
 
 # Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
 ```
