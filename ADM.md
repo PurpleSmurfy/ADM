@@ -1,6 +1,14 @@
 R Notebook
 ================
 
-# Vérification du bon nombre de données
+# Vérification du bon nombre de données, dans le terminal :
 
 ls \| wc -l
+
+``` r
+# Identifier les fichiers Forward et Reverse
+fnFs <- sort(list.files(path="Data", pattern="_1.fastq", full.names = TRUE))
+fnRs <- sort(list.files(path="Data", pattern="_2.fastq", full.names = TRUE))
+
+# Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
+```
