@@ -1,6 +1,14 @@
 R Notebook
 ================
 
+``` r
+library(dada2); packageVersion("dada2")
+```
+
+    ## Loading required package: Rcpp
+
+    ## [1] '1.40.0'
+
 # Vérification du bon nombre de données, dans le terminal :
 
 ls \| wc -l
@@ -281,4 +289,12 @@ fnFs <- sort(list.files(path, pattern="_1.fastq", full.names = TRUE)) #Forward
 fnRs <- sort(list.files(path, pattern="_2.fastq", full.names = TRUE)) #Reverse
 
 # Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
+sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
 ```
+
+``` r
+#On vérifie le score de qualité des read Forward et Reverse
+plotQualityProfile(fnFs[1:2])
+```
+
+![](ADM_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
